@@ -14,3 +14,15 @@ module "vm1" {
   os_image                = var.os_image
 
 }
+
+
+resource "null_resource" "upgrade_os" {
+  provisioner "local-exec" {
+    command     = ".'${path.module}\\scripts\\upgrade_os_inplace.ps1' -JsonString '${local.json}' "
+    interpreter = ["pwsh", "-Command"]
+  }
+
+  depends_on = [
+    module.vm1
+  ]
+}

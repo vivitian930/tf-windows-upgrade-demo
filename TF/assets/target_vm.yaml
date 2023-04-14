@@ -1,0 +1,4 @@
+poc:
+  - subscription_id: 0a6238c1-cd3f-4b40-9043-6e5afb88c288
+    resource_group: rg-aue-winup-test-01
+    virtual_machines: ["vmauewinuptst01"]
